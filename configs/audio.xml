@@ -1,0 +1,23 @@
+<View>
+  <Header value="AUDIO · 语音转写质检（规范 v1.0）"/>
+  <Audio name="audio" value="$audio" zoom="true" speed="true"/>
+  <Text name="asr_text" value="$asr_text"/>
+  <TextArea name="transcript" toName="audio" editable="true" required="true" rows="4" placeholder="请听音频，并在此修正 ASR 转写文本"/>
+
+  <Choices name="error_types" toName="audio" choice="multiple">
+    <Choice value="多字"/>
+    <Choice value="漏字"/>
+    <Choice value="错字/同音字"/>
+    <Choice value="专有名词"/>
+    <Choice value="标点/格式"/>
+    <Choice value="无错误"/>
+  </Choices>
+
+  <Choices name="intelligibility" toName="audio" choice="single" required="true">
+    <Choice value="5 完全可懂"/>
+    <Choice value="4 基本可懂"/>
+    <Choice value="3 需要回听"/>
+    <Choice value="2 多处听不清"/>
+    <Choice value="1 无法转写"/>
+  </Choices>
+</View>

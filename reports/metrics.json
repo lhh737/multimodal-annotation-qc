@@ -1,0 +1,96 @@
+{
+  "text": {
+    "n_tasks": 21,
+    "n_annotations": 63,
+    "annotators": [
+      "ann1@local.test",
+      "model-deepseek@local.test",
+      "model-glm@local.test"
+    ],
+    "percent_agreement": 0.8412698412698413,
+    "cohen": {
+      "ann1@local.test vs model-deepseek@local.test": {
+        "kappa": 0.6341463414634146,
+        "n": 21
+      },
+      "ann1@local.test vs model-glm@local.test": {
+        "kappa": 0.701067615658363,
+        "n": 21
+      },
+      "model-deepseek@local.test vs model-glm@local.test": {
+        "kappa": 0.9285714285714286,
+        "n": 21
+      }
+    },
+    "fleiss": 0.756003098373354,
+    "fleiss_n_tasks": 21,
+    "krippendorff_alpha": 0.7598760650658404,
+    "unanimous_tasks": 16,
+    "label_distribution": {
+      "中性": 7,
+      "无法判断": 5,
+      "正面": 23,
+      "负面": 28
+    },
+    "confidence_calibration": [
+      {
+        "confidence": 5,
+        "n": 33,
+        "accuracy_vs_majority": 0.9696969696969697
+      },
+      {
+        "confidence": 4,
+        "n": 26,
+        "accuracy_vs_majority": 0.8846153846153846
+      },
+      {
+        "confidence": 3,
+        "n": 3,
+        "accuracy_vs_majority": 0.6666666666666666
+      },
+      {
+        "confidence": 1,
+        "n": 1,
+        "accuracy_vs_majority": 1.0
+      }
+    ],
+    "aspect_jaccard": 0.6957671957671957,
+    "n_disagreements": 5,
+    "label_noise_count": 0,
+    "label_noise_checked": 14
+  },
+  "image": {
+    "n_images": 5,
+    "n_annotations": 5,
+    "n_boxes": 52,
+    "label_counts": {
+      "动物": 1,
+      "食物": 31,
+      "车辆": 8,
+      "人": 12
+    },
+    "annotators": [
+      "ann1@local.test"
+    ],
+    "pairs": 0,
+    "micro_precision": null,
+    "micro_recall": null,
+    "micro_f1": null,
+    "mean_matched_iou": null,
+    "total_tp": 0,
+    "total_fp": 0,
+    "total_fn": 0,
+    "per_pair_f1": {}
+  },
+  "audio": {
+    "n_items": 9,
+    "mean_cer_before": 0.05477716727716728,
+    "mean_cer_after": 0.010846560846560847,
+    "absolute_reduction": 0.04393060643060642,
+    "relative_reduction": 0.8019875545648741,
+    "improved": 6,
+    "unchanged": 3,
+    "worse": 0,
+    "perfect_after": 7
+  }
+}

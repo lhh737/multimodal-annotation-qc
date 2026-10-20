@@ -1,0 +1,11 @@
+label-studio==1.23.2
+label-studio-sdk==2.1.2
+pandas
+numpy
+scikit-learn
+krippendorff
+requests
+python-pptx==1.0.2
+openpyxl
+jiwer
+matplotlib

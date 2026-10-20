@@ -1,0 +1,6 @@
+﻿task_id,split,text,labels,aspects,n_distinct,final_label,reason
+T04,formal,加微信 wxid_88888 领红包，每天都有大额优惠券，速度来！,ann1@local.test=中性(conf=5 非常确定); model-deepseek@local.test=无法判断(conf=5 非常确定); model-glm@local.test=无法判断(conf=5 非常确定),ann1@local.test=无; model-deepseek@local.test=无; model-glm@local.test=无,2,,
+T05,formal,还行。,ann1@local.test=正面(conf=3 一般); model-deepseek@local.test=中性(conf=4 比较确定); model-glm@local.test=中性(conf=3 一般),"ann1@local.test=价格,包装,卫生,口味,服务,配送; model-deepseek@local.test=无; model-glm@local.test=无",2,,
+T11,formal,京酱肉丝味道不错，要是能再便宜点就好了！毕竟量不是很大,ann1@local.test=中性(conf=4 比较确定); model-deepseek@local.test=正面(conf=4 比较确定); model-glm@local.test=正面(conf=4 比较确定),"ann1@local.test=价格,包装,卫生,口味; model-deepseek@local.test=价格,口味; model-glm@local.test=价格,口味",2,,
+T20,formal,分量一般，味道一般，价格也一般，没什么特别的。,ann1@local.test=负面(conf=4 比较确定); model-deepseek@local.test=中性(conf=4 比较确定); model-glm@local.test=中性(conf=4 比较确定),"ann1@local.test=价格,口味; model-deepseek@local.test=价格,口味; model-glm@local.test=价格,口味",2,,
+T22,formal,我住阳光小区3栋502，骑手直接送上来了，电话13812345678。,ann1@local.test=正面(conf=4 比较确定); model-deepseek@local.test=中性(conf=4 比较确定); model-glm@local.test=正面(conf=3 一般),"ann1@local.test=服务,配送; model-deepseek@local.test=配,送; model-glm@local.test=配,送",2,,

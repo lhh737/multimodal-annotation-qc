@@ -1,0 +1,697 @@
+{
+  "model": "deepseek-v4-flash",
+  "provider": "tokenhub",
+  "base_url": "https://tokenhub.tencentmaas.com/v1",
+  "items": [
+    {
+      "task_id": "T01",
+      "text": "骑士服务很好，商品质量也可。",
+      "label": {
+        "sentiment": "正面",
+        "aspects": [
+          "服务",
+          "口味"
+        ],
+        "flags": [
+          "无"
+        ],
+        "confidence": 4,
+        "reason": "明确称赞骑士服务和商品质量，总体肯定"
+      },
+      "raw": "{\n  \"sentiment\": \"正面\",\n  \"aspects\": [\"服务\", \"口味\"],\n  \"flags\": [\"无\"],\n  \"confidence\": 4,\n  \"reason\": \"明确称赞骑士服务和商品质量，总体肯定\"\n}",
+      "usage": {
+        "prompt_tokens": 631,
+        "completion_tokens": 279,
+        "total_tokens": 910,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 228
+        }
+      },
+      "latency": 4.735
+    },
+    {
+      "task_id": "T02",
+      "text": "送餐员太差！慢！餐凉！不送上楼！态度不好！！",
+      "label": {
+        "sentiment": "负面",
+        "aspects": [
+          "配送",
+          "口味"
+        ],
+        "flags": [
+          "无"
+        ],
+        "confidence": 5,
+        "reason": "明确投诉送餐员慢、餐凉、不送上楼及态度差"
+      },
+      "raw": "{\"sentiment\":\"负面\",\"aspects\":[\"配送\",\"口味\"],\"flags\":[\"无\"],\"confidence\":5,\"reason\":\"明确投诉送餐员慢、餐凉、不送上楼及态度差\"}",
+      "usage": {
+        "prompt_tokens": 641,
+        "completion_tokens": 115,
+        "total_tokens": 756,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 70
+        }
+      },
+      "latency": 2.764
+    },
+    {
+      "task_id": "T03",
+      "text": "菜很好吃，但是等了一个多小时才送到，汤都洒了。",
+      "label": {
+        "sentiment": "负面",
+        "aspects": [
+          "口味",
+          "配送"
+        ],
+        "flags": [
+          "无"
+        ],
+        "confidence": 4,
+        "reason": "菜虽好吃，但严重超时且汤洒漏，核心体验受损，总体负面"
+      },
+      "raw": "{\"sentiment\":\"负面\",\"aspects\":[\"口味\",\"配送\"],\"flags\":[\"无\"],\"confidence\":4,\"reason\":\"菜虽好吃，但严重超时且汤洒漏，核心体验受损，总体负面\"}",
+      "usage": {
+        "prompt_tokens": 638,
+        "completion_tokens": 241,
+        "total_tokens": 879,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 193
+        }
+      },
+      "latency": 4.219
+    },
+    {
+      "task_id": "T04",
+      "text": "加微信 wxid_88888 领红包，每天都有大额优惠券，速度来！",
+      "label": {
+        "sentiment": "无法判断",
+        "aspects": [
+          "无"
+        ],
+        "flags": [
+          "广告推广",
+          "含隐私信息"
+        ],
+        "confidence": 5,
+        "reason": "广告推广并包含微信号，非消费评价"
+      },
+      "raw": "{\"sentiment\":\"无法判断\",\"aspects\":[\"无\"],\"flags\":[\"广告推广\",\"含隐私信息\"],\"confidence\":5,\"reason\":\"广告推广并包含微信号，非消费评价\"}",
+      "usage": {
+        "prompt_tokens": 644,
+        "completion_tokens": 81,
+        "total_tokens": 725,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 39
+        }
+      },
+      "latency": 2.407
+    },
+    {
+      "task_id": "T05",
+      "text": "还行。",
+      "label": {
+        "sentiment": "中性",
+        "aspects": [
+          "无"
+        ],
+        "flags": [
+          "无"
+        ],
+        "confidence": 4,
+        "reason": "简单中性评价，无明确褒贬"
+      },
+      "raw": "{\"sentiment\":\"中性\",\"aspects\":[\"无\"],\"flags\":[\"无\"],\"confidence\":4,\"reason\":\"简单中性评价，无明确褒贬\"}",
+      "usage": {
+        "prompt_tokens": 625,
+        "completion_tokens": 145,
+        "total_tokens": 770,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 110
+        }
+      },
+      "latency": 3.024
+    },
+    {
+      "task_id": "T06",
+      "text": "包装好用心呀，点赞！",
+      "label": {
+        "sentiment": "正面",
+        "aspects": [
+          "包装"
+        ],
+        "flags": [
+          "无"
+        ],
+        "confidence": 5,
+        "reason": "明确称赞包装用心，态度正面"
+      },
+      "raw": "{\"sentiment\":\"正面\",\"aspects\":[\"包装\"],\"flags\":[\"无\"],\"confidence\":5,\"reason\":\"明确称赞包装用心，态度正面\"}",
+      "usage": {
+        "prompt_tokens": 630,
+        "completion_tokens": 79,
+        "total_tokens": 709,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 45
+        }
+      },
+      "latency": 3.403
+    },
+    {
+      "task_id": "T07",
+      "text": "感谢骑士小哥，这么冷的天",
+      "label": {
+        "sentiment": "正面",
+        "aspects": [
+          "配送"
+        ],
+        "flags": [
+          "无"
+        ],
+        "confidence": 4,
+        "reason": "感谢骑手在寒冷天气送餐，态度正面"
+      },
+      "raw": "{\"sentiment\":\"正面\",\"aspects\":[\"配送\"],\"flags\":[\"无\"],\"confidence\":4,\"reason\":\"感谢骑手在寒冷天气送餐，态度正面\"}",
+      "usage": {
+        "prompt_tokens": 630,
+        "completion_tokens": 94,
+        "total_tokens": 724,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 56
+        }
+      },
+      "latency": 3.0
+    },
+    {
+      "task_id": "T08",
+      "text": "太棒了，速度快，优惠也大！",
+      "label": {
+        "sentiment": "正面",
+        "aspects": [
+          "配送",
+          "价格"
+        ],
+        "flags": [
+          "无"
+        ],
+        "confidence": 5,
+        "reason": "明确赞美速度快且优惠大，整体好评"
+      },
+      "raw": "{\"sentiment\":\"正面\",\"aspects\":[\"配送\",\"价格\"],\"flags\":[\"无\"],\"confidence\":5,\"reason\":\"明确赞美速度快且优惠大，整体好评\"}",
+      "usage": {
+        "prompt_tokens": 633,
+        "completion_tokens": 79,
+        "total_tokens": 712,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 41
+        }
+      },
+      "latency": 2.79
+    },
+    {
+      "task_id": "T09",
+      "text": "味道很正，速度超快，定过好几次了",
+      "label": {
+        "sentiment": "正面",
+        "aspects": [
+          "口味",
+          "配送"
+        ],
+        "flags": [
+          "无"
+        ],
+        "confidence": 5,
+        "reason": "明确好评，口味正且配送快，多次回购"
+      },
+      "raw": "{\"sentiment\":\"正面\",\"aspects\":[\"口味\",\"配送\"],\"flags\":[\"无\"],\"confidence\":5,\"reason\":\"明确好评，口味正且配送快，多次回购\"}",
+      "usage": {
+        "prompt_tokens": 635,
+        "completion_tokens": 63,
+        "total_tokens": 698,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 23
+        }
+      },
+      "latency": 2.958
+    },
+    {
+      "task_id": "T10",
+      "text": "蔬菜一起煮汤里就不太好了，味道还是没的说，在这家买过好几次了，很喜欢。",
+      "label": {
+        "sentiment": "正面",
+        "aspects": [
+          "口味"
+        ],
+        "flags": [
+          "无"
+        ],
+        "confidence": 4,
+        "reason": "虽有蔬菜煮汤的小抱怨，但明确夸赞味道且表达喜爱，总体好评"
+      },
+      "raw": "{\"sentiment\":\"正面\",\"aspects\":[\"口味\"],\"flags\":[\"无\"],\"confidence\":4,\"reason\":\"虽有蔬菜煮汤的小抱怨，但明确夸赞味道且表达喜爱，总体好评\"}",
+      "usage": {
+        "prompt_tokens": 645,
+        "completion_tokens": 181,
+        "total_tokens": 826,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 136
+        }
+      },
+      "latency": 4.002
+    },
+    {
+      "task_id": "T11",
+      "text": "京酱肉丝味道不错，要是能再便宜点就好了！毕竟量不是很大",
+      "label": {
+        "sentiment": "正面",
+        "aspects": [
+          "口味",
+          "价格"
+        ],
+        "flags": [
+          "无"
+        ],
+        "confidence": 4,
+        "reason": "肯定味道，同时抱怨价格和量，轻微负面不影响总体好评"
+      },
+      "raw": "{\"sentiment\":\"正面\",\"aspects\":[\"口味\",\"价格\"],\"flags\":[\"无\"],\"confidence\":4,\"reason\":\"肯定味道，同时抱怨价格和量，轻微负面不影响总体好评\"}",
+      "usage": {
+        "prompt_tokens": 641,
+        "completion_tokens": 401,
+        "total_tokens": 1042,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 358
+        }
+      },
+      "latency": 7.259
+    },
+    {
+      "task_id": "T12",
+      "text": "配送快很满意就是炒饭将有太多啦",
+      "label": {
+        "sentiment": "正面",
+        "aspects": [
+          "配送",
+          "口味"
+        ],
+        "flags": [
+          "无"
+        ],
+        "confidence": 4,
+        "reason": "配送快且表示满意，炒饭酱料多属轻微抱怨，总体仍为好评"
+      },
+      "raw": "{\"sentiment\":\"正面\",\"aspects\":[\"配送\",\"口味\"],\"flags\":[\"无\"],\"confidence\":4,\"reason\":\"配送快且表示满意，炒饭酱料多属轻微抱怨，总体仍为好评\"}",
+      "usage": {
+        "prompt_tokens": 633,
+        "completion_tokens": 138,
+        "total_tokens": 771,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 90
+        }
+      },
+      "latency": 2.908
+    },
+    {
+      "task_id": "T13",
+      "text": "米线是碎的，太难吃了，吃过的最难吃米线，还38块钱",
+      "label": {
+        "sentiment": "负面",
+        "aspects": [
+          "口味",
+          "价格"
+        ],
+        "flags": [
+          "无"
+        ],
+        "confidence": 5,
+        "reason": "明确批评米线难吃且价格贵，总体强烈不满"
+      },
+      "raw": "{\"sentiment\":\"负面\",\"aspects\":[\"口味\",\"价格\"],\"flags\":[\"无\"],\"confidence\":5,\"reason\":\"明确批评米线难吃且价格贵，总体强烈不满\"}",
+      "usage": {
+        "prompt_tokens": 641,
+        "completion_tokens": 100,
+        "total_tokens": 741,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 58
+        }
+      },
+      "latency": 2.52
+    },
+    {
+      "task_id": "T14",
+      "text": "送餐时间延误1个小时，但外送人员态度较好，希望下次能快点儿。",
+      "label": {
+        "sentiment": "负面",
+        "aspects": [
+          "配送",
+          "服务"
+        ],
+        "flags": [
+          "无"
+        ],
+        "confidence": 5,
+        "reason": "严重超时是核心问题，态度好不能抵消负面体验"
+      },
+      "raw": "{\"sentiment\":\"负面\",\"aspects\":[\"配送\",\"服务\"],\"flags\":[\"无\"],\"confidence\":5,\"reason\":\"严重超时是核心问题，态度好不能抵消负面体验\"}",
+      "usage": {
+        "prompt_tokens": 643,
+        "completion_tokens": 141,
+        "total_tokens": 784,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 99
+        }
+      },
+      "latency": 3.333
+    },
+    {
+      "task_id": "T15",
+      "text": "菜太少了，饼有点厚，酱汁味道浅",
+      "label": {
+        "sentiment": "负面",
+        "aspects": [
+          "口味"
+        ],
+        "flags": [
+          "无"
+        ],
+        "confidence": 5,
+        "reason": "菜少、饼厚、酱汁味道浅均为对餐品的负面评价"
+      },
+      "raw": "{\"sentiment\":\"负面\",\"aspects\":[\"口味\"],\"flags\":[\"无\"],\"confidence\":5,\"reason\":\"菜少、饼厚、酱汁味道浅均为对餐品的负面评价\"}",
+      "usage": {
+        "prompt_tokens": 635,
+        "completion_tokens": 350,
+        "total_tokens": 985,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 307
+        }
+      },
+      "latency": 5.727
+    },
+    {
+      "task_id": "T16",
+      "text": "不好吃，太油腻、有些干！",
+      "label": {
+        "sentiment": "负面",
+        "aspects": [
+          "口味"
+        ],
+        "flags": [
+          "无"
+        ],
+        "confidence": 5,
+        "reason": "明确否定口味，指出油腻和干"
+      },
+      "raw": "{\"sentiment\":\"负面\",\"aspects\":[\"口味\"],\"flags\":[\"无\"],\"confidence\":5,\"reason\":\"明确否定口味，指出油腻和干\"}",
+      "usage": {
+        "prompt_tokens": 632,
+        "completion_tokens": 71,
+        "total_tokens": 703,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 36
+        }
+      },
+      "latency": 3.152
+    },
+    {
+      "task_id": "T17",
+      "text": "订餐1个半小时不见餐，催了还挂电话！",
+      "label": {
+        "sentiment": "负面",
+        "aspects": [
+          "配送",
+          "服务"
+        ],
+        "flags": [
+          "无"
+        ],
+        "confidence": 5,
+        "reason": "严重超时且催餐被挂电话，体验差"
+      },
+      "raw": "{\"sentiment\":\"负面\",\"aspects\":[\"配送\",\"服务\"],\"flags\":[\"无\"],\"confidence\":5,\"reason\":\"严重超时且催餐被挂电话，体验差\"}",
+      "usage": {
+        "prompt_tokens": 637,
+        "completion_tokens": 103,
+        "total_tokens": 740,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 62
+        }
+      },
+      "latency": 2.303
+    },
+    {
+      "task_id": "T18",
+      "text": "说好的发票呢，不是说要补一张送过来么。票没了体谅你们下，但是说好的补票呢。",
+      "label": {
+        "sentiment": "负面",
+        "aspects": [
+          "服务"
+        ],
+        "flags": [
+          "无"
+        ],
+        "confidence": 5,
+        "reason": "承诺补发票未兑现，明显不满"
+      },
+      "raw": "{\"sentiment\":\"负面\",\"aspects\":[\"服务\"],\"flags\":[\"无\"],\"confidence\":5,\"reason\":\"承诺补发票未兑现，明显不满\"}",
+      "usage": {
+        "prompt_tokens": 650,
+        "completion_tokens": 80,
+        "total_tokens": 730,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 45
+        }
+      },
+      "latency": 3.372
+    },
+    {
+      "task_id": "T19",
+      "text": "外卖不给餐巾纸的吗？",
+      "label": {
+        "sentiment": "负面",
+        "aspects": [
+          "包装"
+        ],
+        "flags": [
+          "无"
+        ],
+        "confidence": 4,
+        "reason": "抱怨未提供餐巾纸，体验不佳"
+      },
+      "raw": "{\"sentiment\":\"负面\",\"aspects\":[\"包装\"],\"flags\":[\"无\"],\"confidence\":4,\"reason\":\"抱怨未提供餐巾纸，体验不佳\"}",
+      "usage": {
+        "prompt_tokens": 630,
+        "completion_tokens": 127,
+        "total_tokens": 757,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 91
+        }
+      },
+      "latency": 3.181
+    },
+    {
+      "task_id": "T20",
+      "text": "分量一般，味道一般，价格也一般，没什么特别的。",
+      "label": {
+        "sentiment": "中性",
+        "aspects": [
+          "口味",
+          "价格"
+        ],
+        "flags": [
+          "无"
+        ],
+        "confidence": 4,
+        "reason": "分量、味道、价格均一般，态度平淡，无明显褒贬"
+      },
+      "raw": "{\"sentiment\":\"中性\",\"aspects\":[\"口味\",\"价格\"],\"flags\":[\"无\"],\"confidence\":4,\"reason\":\"分量、味道、价格均一般，态度平淡，无明显褒贬\"}",
+      "usage": {
+        "prompt_tokens": 636,
+        "completion_tokens": 285,
+        "total_tokens": 921,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 242
+        }
+      },
+      "latency": 4.875
+    },
+    {
+      "task_id": "T21",
+      "text": "真是“神速”啊，下单两小时还没到，饿得我都快升仙了。",
+      "label": {
+        "sentiment": "负面",
+        "aspects": [
+          "配送"
+        ],
+        "flags": [
+          "无"
+        ],
+        "confidence": 5,
+        "reason": "反讽表达配送严重超时，饿极不满"
+      },
+      "raw": "{\"sentiment\":\"负面\",\"aspects\":[\"配送\"],\"flags\":[\"无\"],\"confidence\":5,\"reason\":\"反讽表达配送严重超时，饿极不满\"}",
+      "usage": {
+        "prompt_tokens": 644,
+        "completion_tokens": 85,
+        "total_tokens": 729,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 47
+        }
+      },
+      "latency": 3.481
+    },
+    {
+      "task_id": "T22",
+      "text": "我住阳光小区3栋502，骑手直接送上来了，电话13812345678。",
+      "label": {
+        "sentiment": "中性",
+        "aspects": [
+          "配送"
+        ],
+        "flags": [
+          "含隐私信息"
+        ],
+        "confidence": 4,
+        "reason": "陈述配送事实并包含隐私信息，无明显褒贬"
+      },
+      "raw": "{\"sentiment\":\"中性\",\"aspects\":[\"配送\"],\"flags\":[\"含隐私信息\"],\"confidence\":4,\"reason\":\"陈述配送事实并包含隐私信息，无明显褒贬\"}",
+      "usage": {
+        "prompt_tokens": 643,
+        "completion_tokens": 773,
+        "total_tokens": 1416,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 733
+        }
+      },
+      "latency": 10.707
+    },
+    {
+      "task_id": "T23",
+      "text": "。。。",
+      "label": {
+        "sentiment": "无法判断",
+        "aspects": [
+          "无"
+        ],
+        "flags": [
+          "无"
+        ],
+        "confidence": 5,
+        "reason": "内容仅为省略号，无有效信息"
+      },
+      "raw": "{\"sentiment\":\"无法判断\",\"aspects\":[\"无\"],\"flags\":[\"无\"],\"confidence\":5,\"reason\":\"内容仅为省略号，无有效信息\"}",
+      "usage": {
+        "prompt_tokens": 624,
+        "completion_tokens": 465,
+        "total_tokens": 1089,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 429
+        }
+      },
+      "latency": 6.609
+    },
+    {
+      "task_id": "T24",
+      "text": "味道特别好，但是再也不会点了，太难吃了。",
+      "label": {
+        "sentiment": "负面",
+        "aspects": [
+          "口味"
+        ],
+        "flags": [
+          "无"
+        ],
+        "confidence": 4,
+        "reason": "前后矛盾，但结论是不再购买，总体负面"
+      },
+      "raw": "{\"sentiment\":\"负面\",\"aspects\":[\"口味\"],\"flags\":[\"无\"],\"confidence\":4,\"reason\":\"前后矛盾，但结论是不再购买，总体负面\"}",
+      "usage": {
+        "prompt_tokens": 634,
+        "completion_tokens": 110,
+        "total_tokens": 744,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 72
+        }
+      },
+      "latency": 2.683
+    }
+  ],
+  "total_usage": {
+    "prompt_tokens": 15275,
+    "completion_tokens": 4586,
+    "total_tokens": 19861
+  },
+  "updated_at": "2026-10-20T14:59:00"
+}

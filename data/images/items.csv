@@ -1,0 +1,7 @@
+﻿item_id,split,filename,url
+I01,pilot,01_pug.jpg,http://localhost:8000/images/01_pug.jpg
+I02,formal,02_cat.jpg,http://localhost:8000/images/02_cat.jpg
+I03,formal,03_food_plates.jpg,http://localhost:8000/images/03_food_plates.jpg
+I04,formal,04_street.jpg,http://localhost:8000/images/04_street.jpg
+I05,formal,05_portrait.jpg,http://localhost:8000/images/05_portrait.jpg
+I06,formal,06_fruit.jpg,http://localhost:8000/images/06_fruit.jpg

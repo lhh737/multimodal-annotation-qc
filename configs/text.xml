@@ -1,0 +1,37 @@
+<View>
+  <Header value="TEXT · 中文外卖评论：情感 / 方面 / 质量标注（规范 v1.0）"/>
+  <Text name="text" value="$text"/>
+
+  <Choices name="sentiment" toName="text" choice="single" required="true">
+    <Choice value="正面"/>
+    <Choice value="负面"/>
+    <Choice value="中性"/>
+    <Choice value="无法判断"/>
+  </Choices>
+
+  <Choices name="aspects" toName="text" choice="multiple">
+    <Choice value="口味"/>
+    <Choice value="配送"/>
+    <Choice value="价格"/>
+    <Choice value="服务"/>
+    <Choice value="卫生"/>
+    <Choice value="包装"/>
+    <Choice value="无"/>
+  </Choices>
+
+  <Choices name="flags" toName="text" choice="multiple">
+    <Choice value="广告推广"/>
+    <Choice value="含隐私信息"/>
+    <Choice value="表述不清"/>
+    <Choice value="疑似模板/刷单"/>
+    <Choice value="无"/>
+  </Choices>
+
+  <Choices name="confidence" toName="text" choice="single" required="true">
+    <Choice value="5 非常确定"/>
+    <Choice value="4 比较确定"/>
+    <Choice value="3 一般"/>
+    <Choice value="2 比较不确定"/>
+    <Choice value="1 纯猜测"/>
+  </Choices>
+</View>

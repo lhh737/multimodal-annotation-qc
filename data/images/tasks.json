@@ -1,0 +1,44 @@
+[
+  {
+    "data": {
+      "item_id": "I01",
+      "image": "http://localhost:8000/images/01_pug.jpg",
+      "filename": "01_pug.jpg"
+    }
+  },
+  {
+    "data": {
+      "item_id": "I02",
+      "image": "http://localhost:8000/images/02_cat.jpg",
+      "filename": "02_cat.jpg"
+    }
+  },
+  {
+    "data": {
+      "item_id": "I03",
+      "image": "http://localhost:8000/images/03_food_plates.jpg",
+      "filename": "03_food_plates.jpg"
+    }
+  },
+  {
+    "data": {
+      "item_id": "I04",
+      "image": "http://localhost:8000/images/04_street.jpg",
+      "filename": "04_street.jpg"
+    }
+  },
+  {
+    "data": {
+      "item_id": "I05",
+      "image": "http://localhost:8000/images/05_portrait.jpg",
+      "filename": "05_portrait.jpg"
+    }
+  },
+  {
+    "data": {
+      "item_id": "I06",
+      "image": "http://localhost:8000/images/06_fruit.jpg",
+      "filename": "06_fruit.jpg"
+    }
+  }
+]

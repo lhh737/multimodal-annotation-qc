@@ -1,0 +1,23 @@
+# 环境与运行时
+.venv/
+ls_data/
+.ls_token
+.ls_tokens.json
+.env
+__pycache__/
+*.pyc
+*.pyo
+
+# 标注导出（含账号信息，不提交）
+exports/
+reports/ppt_preview/
+
+# 生成物
+data/audio/*.wav
+data/images_candidates/
+data/contact_sheet.jpg
+waimai_10k.csv
+
+# 系统
+.DS_Store
+Thumbs.db

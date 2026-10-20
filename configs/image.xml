@@ -1,0 +1,19 @@
+<View>
+  <Header value="IMAGE · 目标框标注（规范 v1.0）"/>
+  <Image name="image" value="$image" zoom="true" zoomControl="true"/>
+
+  <RectangleLabels name="objects" toName="image">
+    <Label value="人" background="#FF6B6B"/>
+    <Label value="动物" background="#4ECDC4"/>
+    <Label value="车辆" background="#45B7D1"/>
+    <Label value="食物" background="#F7B731"/>
+    <Label value="其他" background="#A55EEA"/>
+  </RectangleLabels>
+
+  <Choices name="image_quality" toName="image" choice="single" required="true">
+    <Choice value="清晰可标"/>
+    <Choice value="部分遮挡"/>
+    <Choice value="模糊/过暗"/>
+    <Choice value="无可标目标"/>
+  </Choices>
+</View>
