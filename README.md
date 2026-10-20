@@ -198,20 +198,22 @@ start_data_server.bat
 
 ---
 
-## 7. 推 GitHub（后续）
+## 7. GitHub
+
+已推送：https://github.com/lhh737/multimodal-annotation-qc
+
+当前为 **private**。作品集要公开时：
 
 ```bat
-git init
-git add .
-git commit -m "feat: multimodal annotation QC pipeline"
-gh repo create label-studio-qc --private --source . --push
+gh repo edit lhh737/multimodal-annotation-qc --visibility public --accept-visibility-change-consequences
 ```
 
 注意：
 
-- `.ls_token`、`ls_data/`、`exports/`、`.venv/` 已在 `.gitignore` 中，不会被推上去。
+- `.env`、`.ls_token`、`.ls_tokens.json`、`ls_data/`、`exports/`、`.venv/` 已在 `.gitignore` 中，不会被推上去。
 - 图片来自 Unsplash，见 `data/images/ATTRIBUTION.md`。
-- 不建议把 `waimai_10k.csv` 原始数据一起提交；文本任务已固定在 `data/text/tasks.json`。
+- `waimai_10k.csv` 原始数据未提交；文本任务已固定在 `data/text/tasks.json`。
+- 推之前可用 `git grep --cached -nE "sk-|ARK_API_KEY=|TOKENHUB_API_KEY="` 再扫一遍密钥。
 
 ---
 
