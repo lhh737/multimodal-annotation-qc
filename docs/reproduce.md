@@ -55,7 +55,7 @@ pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple
 - 模型标注：`model-deepseek@local.test`、`model-glm@local.test`
 - 需要在每个项目的 **Settings → Members** 中加入这些账号
 
-模型账号的 token 写入 `.ls_tokens.json`：
+模型账号的 token 在 **Account & Settings → Access Token** 获取，写入 `.ls_tokens.json`：
 
 ```json
 {
