@@ -114,13 +114,14 @@ curl -H "Authorization: Token <TOKEN>" "http://localhost:8080/api/projects/3/exp
 .venv\Scripts\python.exe scripts\compare_models.py
 ```
 
-## 9. 生成幻灯片
+## 9. 生成幻灯片与主图
 
 ```bat
 .venv\Scripts\python.exe scripts\make_ppt.py
+.venv\Scripts\python.exe scripts\make_readme_figure.py
 ```
 
-输出 `docs/slides/multimodal-annotation-qc.pptx`。PDF 需要本机 PowerPoint 导出，仓库已带一份。
+幻灯片输出到 `docs/slides/multimodal-annotation-qc.pptx`；README 主图输出到 `docs/figures/results-summary.png`。PDF 需要本机 PowerPoint 导出，仓库已带一份。
 
 ## 说明
 
