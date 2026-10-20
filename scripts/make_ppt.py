@@ -7,7 +7,7 @@
   reports/gold_text.csv
 
 输出：
-  reports/多模态数据标注与质检_评测文档.pptx
+  docs/slides/multimodal-annotation-qc.pptx
 """
 import json
 from pathlib import Path
@@ -20,7 +20,7 @@ from pptx.enum.text import MSO_ANCHOR, PP_ALIGN
 from pptx.util import Inches, Pt
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "reports/多模态数据标注与质检_评测文档.pptx"
+OUT = ROOT / "docs/slides/multimodal-annotation-qc.pptx"
 
 # ---- design tokens (dataviz reference palette, validated for 3 slots) ----
 INK = RGBColor(0x0B, 0x0B, 0x0B)
@@ -77,12 +77,6 @@ def add_rect(slide, x, y, w, h, fill, line=None, rounded=False):
         except Exception:
             pass
     return shp
-
-
-def add_line(slide, x, y, w, color=GRID, width=1.0):
-    shp = slide.shapes.add_connector(1, Inches(x), Inches(y), Inches(x + w), Inches(y))
-    shp.line.color.rgb = color
-    shp.line.width = Pt(width)
 
 
 def add_table(slide, rows, x, y, w, col_widths, font_size=10.5, row_h=0.38,
@@ -159,13 +153,10 @@ def bar_chart(slide, data, x, y, w, h):
     # gridlines
     for frac in (0, 0.25, 0.5, 0.75, 1.0):
         gx = plot_x + frac * plot_w
-        add_line(slide, gx, y - 0.08, 0, GRID, 0.75)
-        slide.shapes.add_connector(1, Inches(gx), Inches(y - 0.05),
-                                   Inches(gx), Inches(y + h - 0.12))
-        # connector color
-        line = slide.shapes[-1].line
-        line.color.rgb = GRID
-        line.width = Pt(0.6)
+        conn = slide.shapes.add_connector(
+            1, Inches(gx), Inches(y - 0.05), Inches(gx), Inches(y + h - 0.12))
+        conn.line.color.rgb = GRID
+        conn.line.width = Pt(0.6)
     for i, (name, val, color) in enumerate(data):
         cy = y + i * row_h
         add_text(slide, x, cy + 0.02, label_w, 0.3, name, size=11,
@@ -207,7 +198,7 @@ def main():
              "个人实训项目 · 所有指标来自实际标注与脚本复算", size=9, color=RGBColor(0x89, 0x87, 0x81))
 
     # ---------------- 2 overview ----------------
-    s = new_slide(prs, "一页看懂：三个模态，一条质检链路", "PROJECT OVERVIEW")
+    s = new_slide(prs, "项目概览：三个模态，一条质检链路", "OVERVIEW")
     cards = [
         ("TEXT", "24", "条文本任务", f"{t['n_tasks']} 条正式集 · 3 路标注", BLUE),
         ("IMAGE", "6", "张图像", f"5 张正式集 · {img['n_boxes']} 个框", ORANGE),
@@ -262,11 +253,11 @@ def main():
     for p in principles:
         add_text(s, 9.85, yy, 2.35, 0.75, "· " + p, size=9.8, color=SECONDARY, spacing=1.1)
         yy += 0.78
-    footnote(s, "完整规则见《标注规范.md》v1.0；试标后修订为 v1.1。")
+    footnote(s, "完整规则见 docs/annotation-guideline.md（v1.1）。")
     page_no(s, 3)
 
     # ---------------- 4 decision rules ----------------
-    s = new_slide(prs, "判定规则：先看结论，再看证据强度", "DECISION RULES")
+    s = new_slide(prs, "判定规则：结论优先，证据加权", "RULES")
     rules = [
         ("01", "广告 / 无关 / 无意义", "→ 无法判断", "并打质量标记"),
         ("02", "有明确结论句", "→ 按结论句", "不要被前面的细节带偏"),
@@ -327,7 +318,7 @@ def main():
     page_no(s, 5)
 
     # ---------------- 6 metrics ----------------
-    s = new_slide(prs, "指标口径：先问“回答什么问题”，再看数值", "METRICS")
+    s = new_slide(prs, "指标口径与判读", "METRICS")
     rows = [
         ["指标", "回答的问题", "本轮用途"],
         ["一致率", "同一批任务有多少比例标签相同", "直观，但未校正随机一致"],
@@ -369,7 +360,7 @@ def main():
         ["语音完全正确", f"{a['perfect_after']} / {a['n_items']}"],
     ]
     add_table(s, rows, 0.8, 4.15, 6.2, [4.2, 2.0], font_size=10, row_h=0.42)
-    add_text(s, 7.45, 4.15, 5.0, 0.3, "一句话", size=9, color=MUTED)
+    add_text(s, 7.45, 4.15, 5.0, 0.3, "读数", size=9, color=MUTED)
     add_text(s, 7.45, 4.55, 4.9, 1.6,
              "文本一致性中等，主要风险在边界样本；\n语音修正把 CER 从 5.5% 降到 1.1%；\n图像只完成单人标注，暂不能算 IAA。",
              size=11, color=SECONDARY, spacing=1.3)
@@ -377,7 +368,7 @@ def main():
     page_no(s, 7)
 
     # ---------------- 8 human vs models ----------------
-    s = new_slide(prs, "人工 vs 模型：模型更贴规范，但条件不完全对等", "EVALUATION")
+    s = new_slide(prs, "人工与模型标注对比", "EVALUATION")
     data = [
         ("人工 ann1", acc.get("人工 ann1", 0), ORANGE),
         ("DeepSeek-V4-Flash", acc.get("DeepSeek-V4-Flash", 0), BLUE),
@@ -395,14 +386,14 @@ def main():
     add_table(s, rows, 8.5, 2.0, 4.0, [2.75, 1.25], font_size=10.5, row_h=0.45,
               align_right_cols=(1,))
     add_text(s, 8.5, 4.15, 4.0, 1.6,
-             "模型之间高度一致，\n但与人只有中等一致。\n\n"
-             "更像“规范执行差异”，\n不是模型全面更强。",
+             "模型之间高度一致，\n与人只有中等一致。\n\n"
+             "差异主要来自规范执行条件，\n不足以推断模型能力全面更强。",
              size=10.5, color=SECONDARY, spacing=1.25)
     footnote(s, "n=21；模型 prompt 含完整规范，人工只阅读文档；样本小，结论不外推。")
     page_no(s, 8)
 
     # ---------------- 9 error analysis ----------------
-    s = new_slide(prs, "错误集中在哪里：5 条人工错误，全是边界样本", "ERROR ANALYSIS")
+    s = new_slide(prs, "错误分析：人工错误集中在边界样本", "ERROR ANALYSIS")
     rows = [
         ["任务", "文本（截断）", "金标", "人工", "模型"],
         ["T04", "加微信领红包…", "无法判断", "中性", "✓"],
@@ -426,8 +417,8 @@ def main():
         add_text(s, 10.05, yy + 0.03, 2.15, 0.6, txt, size=9.5, color=SECONDARY)
         yy += 1.05
     add_text(s, 0.8, 5.55, 11.6, 0.9,
-             "含义：规范不是“写出来”就够了，边界样本需要试标、校准和低置信度复核。"
-             "模型可以作为预标注，但必须保留人工裁决。",
+             "规范文本本身不足以保证一致性；边界样本需要试标、校准和低置信度复核。"
+             "模型可用于预标注，最终标签仍需人工裁决。",
              size=11.5, color=INK, spacing=1.25)
     footnote(s, "金标来源：16 条全体一致 + 5 条按规范裁决；错误列表来自 model_comparison.csv。")
     page_no(s, 9)
@@ -455,7 +446,7 @@ def main():
     page_no(s, 10)
 
     # ---------------- 11 improvements ----------------
-    s = new_slide(prs, "改进：把边界规则写死，把复核资源花在低置信度", "ACTIONS")
+    s = new_slide(prs, "改进：规范、流程与工具", "ACTIONS")
     cols = [
         ("规范", ["广告 / 隐私 / 超短 / 混合四类写成判定句",
                   "“无”与其他标签互斥，避免多选污染",
@@ -511,7 +502,7 @@ def main():
              "复现：start_label_studio.bat + start_data_server.bat → scripts/analyze.py → scripts/compare_models.py",
              size=9.5, color=SECONDARY)
     add_text(s, 0.8, 6.2, 11.8, 0.3,
-             "仓库：configs/ · data/ · scripts/ · 标注规范.md · reports/",
+             "仓库：configs/ · data/ · docs/ · scripts/ · reports/",
              size=9.5, color=MUTED)
     page_no(s, 12)
 

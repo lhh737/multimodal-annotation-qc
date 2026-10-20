@@ -14,7 +14,6 @@
 """
 import json
 import re
-from collections import Counter
 from pathlib import Path
 
 import pandas as pd
@@ -207,11 +206,11 @@ def markdown(df, met, pl, cf, kap, runs):
     for _, r in err.iterrows():
         L.append(f"| {r.task_id} | {r.gold} | {r.annotator} | {r.pred} | {r.confidence} |")
 
-    L += ["", "## 8. 解读（需人工补写）", "",
-          "- 人工错误是否集中在边界样本（广告/超短/混合/隐私）？",
-          "- 模型是否因为 prompt 直接给了规范而占优？这对真实标注流程意味着什么？",
-          "- 若把模型当预标注，人工复核的优先级应该怎么排？",
-          "- 样本仅 21 条，结论只代表本轮，不要外推。"]
+    L += ["", "## 8. 读数说明", "",
+          "- 模型在 system prompt 中获得了完整规范，人工只阅读文档，条件并不对等。",
+          "- 样本仅 21 条，准确率与 κ 的置信区间较宽，结论只代表本轮。",
+          "- 模型置信度缺少区分度，预标注时应优先复核模型间不一致的样本。",
+          "- 结论与限制见 `docs/model-evaluation.md`。"]
     return "\n".join(L)
 
 

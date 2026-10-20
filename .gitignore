@@ -11,6 +11,8 @@ __pycache__/
 # 标注导出（含账号信息，不提交）
 exports/
 reports/ppt_preview/
+reports/iaa_summary.md
+reports/model_comparison.md
 
 # 生成物
 data/audio/*.wav

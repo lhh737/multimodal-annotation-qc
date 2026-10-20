@@ -12,7 +12,7 @@
 
 输入是 Label Studio 的 JSON 导出（Project -> Export -> JSON）。
 输出到 reports/：
-    iaa_summary.md          汇总报告（可直接改写成作品集报告）
+    iaa_summary.md          指标摘要（原始输出）
     metrics.json            机器可读指标
     disagreements_text.csv  需要人工裁决的分歧清单
     label_noise.csv         与原数据集标签不一致的样本
@@ -20,10 +20,8 @@
     audio_cer.csv           语音逐条 CER 前后对比
 """
 import argparse
-import csv
 import itertools
 import json
-import math
 import re
 import sys
 from collections import Counter, defaultdict
@@ -534,7 +532,7 @@ def analyze_audio(path, meta_path, out_dir, include_pilot=False):
 # 报告
 # --------------------------------------------------------------------------
 def build_report(text_r, image_r, audio_r):
-    lines = ["# 多模态数据标注质检报告（自动生成初稿）", ""]
+    lines = ["# 指标摘要", ""]
     lines += ["## 1. 文本标注一致性", ""]
     if text_r:
         lines += [
@@ -602,14 +600,14 @@ def build_report(text_r, image_r, audio_r):
         lines.append("")
 
     lines += [
-        "## 4. 需要人工补写的部分",
+        "## 4. 读数说明",
         "",
-        "1. 逐条查看 `disagreements_text.csv`，填写 `final_label` 与 `reason`（裁决理由）。",
-        "2. 把分歧归入错误类型：规范歧义 / 任务本身歧义 / 标注员疏忽 / 原数据标签噪声。",
-        "3. 给出 3 条可执行的规范修改建议，并说明修改后预计影响。",
-        "4. 总结 2 条流程改进（如：重叠率、试标题、低置信度复核路由）。",
+        "- 文本统计默认排除试标轮，正式集条数见上表。",
+        "- κ / α 的阈值是经验区间，需结合任务难度与样本量解释。",
+        "- 图像 IAA 需要至少两名标注员；只有一人时 F1 为空。",
+        "- 语音 CER 已做中文数字归一化，标点不计入错误。",
         "",
-        "> 注意：自动报告只负责算数，不替你解释原因。面试官会追问“为什么 κ 是这个数”。",
+        "裁决与结论见 `docs/qc-report.md`。",
     ]
     return "\n".join(lines)
 
